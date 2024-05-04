@@ -2,11 +2,18 @@
 
 import { NextUIProvider } from '@nextui-org/react';
 import QueryClientProvider from './QueryClientProvider';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
+	let theme = 'dark';
+	// if (global?.window?.matchMedia && global.window?.matchMedia('(prefers-color-scheme: dark)').matches) {
+	// 	theme = 'dark';
+	// }
 	return (
 		<NextUIProvider>
-			<QueryClientProvider>{children}</QueryClientProvider>
+			<NextThemesProvider attribute='class' defaultTheme={theme}>
+				<QueryClientProvider>{children}</QueryClientProvider>
+			</NextThemesProvider>
 		</NextUIProvider>
 	);
 }

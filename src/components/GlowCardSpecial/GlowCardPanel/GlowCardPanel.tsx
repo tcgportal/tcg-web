@@ -2,14 +2,11 @@
 import { responsiveClassnames } from '@/utils/utils';
 import gsap from 'gsap';
 import React, { useCallback, useRef } from 'react';
-import GlowCard from '../GlowCard/GlowCard';
+import GlowCard from '../GlowCard';
+import { TAPPInfo } from '@/utils/constants';
 
 export const GlowCardPanel: React.FC<{
-	games: Array<{
-		title: string;
-		imgBackground: string;
-		icon: string;
-	}>;
+	games: TAPPInfo['games'];
 }> = ({ games }) => {
 	const mainRef = useRef<HTMLDivElement>(null);
 	const cards: Array<{
@@ -20,7 +17,7 @@ export const GlowCardPanel: React.FC<{
 		control: boolean;
 	}> = games.map((game, index) => {
 		return {
-			id: `card-${game.title}`,
+			id: `card-${game.name}`,
 			spread: gsap.utils.random(0, 1000),
 			outer: true,
 			control: false,

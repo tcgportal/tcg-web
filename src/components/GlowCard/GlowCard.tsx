@@ -1,42 +1,56 @@
 import { classNames, responsiveClassnames } from '@/utils/utils';
 import React from 'react';
 import './glow-card.css';
+import Link from 'next/link';
 
-export const GlowCard: React.FC<{ index: number; expand?: boolean }> = ({ index, expand }) => {
+export const GlowCardBase: React.FC<{ className?: string; children: React.ReactNode; isLast: boolean }> = ({ className, children, isLast }) => {
 	return (
-		<div
+		<article
 			className={responsiveClassnames(
 				{
-					'2xl': [expand ? '2xl:col-span-2' : '2xl:col-span-1', '2xl:row-span-1', '2xl:h-[300px]'],
-					xl: [expand ? 'xl:col-span-2' : 'xl:col-span-1', 'xl:row-span-1', 'xl:h-[300px]'],
-					lg: [expand ? 'lg:col-span-2' : 'lg:col-span-1', 'lg:row-span-1', 'lg:h-[300px]'],
-					md: ['md:col-span-1', 'md:row-span-1', 'md:h-[200px]'],
-					sm: ['sm:col-span-1', 'sm:row-span-1', 'sm:h-[200px]'],
-					default: ['col-span-1', 'row-span-1', 'h-[200px]'],
+					'2xl': [isLast ? '2xl:col-span-2' : '2xl:col-span-1'],
+					xl: [isLast ? 'xl:col-span-2' : 'xl:col-span-1'],
+					lg: [isLast ? 'lg:col-span-2' : 'lg:col-span-1'],
+					md: [isLast ? 'md:col-span-2' : 'md:col-span-1'],
+					sm: ['sm:col-span-1'],
+					default: ['col-span-1'],
 				},
-				'wrapper',
+				'glow-card__content flex w-full h-full justify-center items-center text-center relative bg-default-50',
+				className,
 			)}
-			style={{ ...{}, '--index': index } as any}
 		>
-			<article
-				className={responsiveClassnames(
-					{
-						'2xl': ['2xl:h-[300px]'],
-						xl: ['xl:h-[300px]'],
-						lg: ['lg:h-[300px]'],
-						md: ['md:h-[200px]'],
-						sm: ['sm:h-[200px]'],
-						default: ['h-[200px]'],
-					},
-					'card',
-				)}
-				data-glow='true'
-			>
-				<div data-glow='true'></div>
-				<div className='card__content'>Pokemon</div>
-			</article>
-		</div>
+			<div className={classNames('flex w-full h-full absolute glow-card__border')}></div>
+			{children}
+		</article>
 	);
+};
+
+export const GlowCard: React.FC<{ className?: string; children: React.ReactNode; isLast: boolean; link?: string }> = ({
+	className,
+	children,
+	link,
+	isLast,
+}) => {
+	if (link) {
+		return (
+			<Link
+				href={link}
+				className={responsiveClassnames({
+					'2xl': [isLast ? '2xl:col-span-2' : '2xl:col-span-1'],
+					xl: [isLast ? 'xl:col-span-2' : 'xl:col-span-1'],
+					lg: [isLast ? 'lg:col-span-2' : 'lg:col-span-1'],
+					md: [isLast ? 'md:col-span-2' : 'md:col-span-1'],
+					sm: ['sm:col-span-1'],
+					default: ['col-span-1'],
+				})}
+			>
+				<GlowCardBase className={className} isLast={isLast}>
+					{children}
+				</GlowCardBase>
+			</Link>
+		);
+	}
+	return <GlowCardBase isLast={isLast}>{children}</GlowCardBase>;
 };
 
 export default GlowCard;
