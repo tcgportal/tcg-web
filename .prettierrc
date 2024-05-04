@@ -4,6 +4,6 @@
     "printWidth": 150,
     "singleQuote": true,
     "trailingComma": "all",
-    "jsxSingleQuote": false,
+    "jsxSingleQuote": true,
     "bracketSpacing": true
 }
