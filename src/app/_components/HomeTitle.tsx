@@ -1,12 +1,13 @@
 import TCGSvg from '@/assets/TCGSVG';
 import { TCGButton } from '@/components/TCGComponents/TCGButton';
+import { getDictionary } from '@/dictionary/dictionaries';
 import { APP_INFO } from '@/utils/constants';
 import { responsiveClassnames } from '@/utils/utils';
-import { Button } from '@nextui-org/react';
 import Link from 'next/link';
 import React from 'react';
 
-export const HomeTitle: React.FC<{ disableLoginButton: boolean }> = ({ disableLoginButton }) => {
+export async function HomeTitle({ disableLoginButton }: { disableLoginButton: boolean }) {
+	const dictionary = await getDictionary('es');
 	return (
 		<section
 			className={responsiveClassnames(
@@ -81,9 +82,9 @@ export const HomeTitle: React.FC<{ disableLoginButton: boolean }> = ({ disableLo
 							WebkitTextFillColor: 'transparent',
 						}}
 					>
-						Compra
+						{dictionary.home.buyText.compra}
 					</span>{' '}
-					y{' '}
+					{dictionary.home.buyText.y}{' '}
 					<span
 						className='font-bold'
 						style={{
@@ -92,25 +93,25 @@ export const HomeTitle: React.FC<{ disableLoginButton: boolean }> = ({ disableLo
 							WebkitTextFillColor: 'transparent',
 						}}
 					>
-						vende
+						{dictionary.home.buyText.vende}
 					</span>{' '}
-					cartas de forma segura a tiendas de toda España
+					{dictionary.home.buyText.cartas}
 				</p>
 				{/* TODO: Check if user is logged in, if not show the button */}
 				{!disableLoginButton ? (
 					<TCGButton className='w-full' color={'primary_glow'} style={{ animationDuration: '3s' }}>
-						Registrate!
+						{dictionary.home.register}
 					</TCGButton>
 				) : undefined}
 				<p>
-					Si eres una tienda y quieres vender tus cartas,{' '}
+					{dictionary.home.shop.part1}{' '}
 					<Link href='/shop-form' className='text-primary opacity-100 font-semibold hover:underline'>
-						rellena este formulario
+						{dictionary.home.shop.part2}
 					</Link>
 				</p>
 			</section>
 		</section>
 	);
-};
+}
 
 export default HomeTitle;

@@ -1,3 +1,3 @@
-export default function CardGameSearchPage() {
+export default function CardGameSearchPage({ params }: { params: { cardgame: string } }) {
 	return <div>Search Game</div>;
 }

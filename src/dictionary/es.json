@@ -1,4 +1,17 @@
 {
 	"title": "Card Market",
-	"description": "Un mercado de cartas sobre Pokémon TCG, Yu-Gi-Oh! y Magic: The Gathering."
+	"description": "Un mercado de cartas sobre Pokémon TCG, Yu-Gi-Oh! y Magic: The Gathering.",
+	"home": {
+		"buyText": {
+			"compra": "Compra",
+			"y": "y",
+			"vende": "vende",
+			"cartas": "cartas de forma segura a tiendas de toda España"
+		},
+		"register": "Regístrate",
+		"shop": {
+			"part1": "Si eres una tienda y quieres vender tus cartas,",
+			"part2": "rellena este formulario."
+		}
+	}
 }
