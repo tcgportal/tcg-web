@@ -1,10 +1,14 @@
-export const APP_INFO: {
+export type TAPPInfo = {
+	appName?: string;
 	games: Array<{
 		name: string;
 		img: string;
 		icon: string;
 	}>;
-} = {
+};
+
+export const APP_INFO: TAPPInfo = {
+	appName: process.env.APP_NAME,
 	games: [
 		{
 			name: 'pokemon',
