@@ -6,7 +6,8 @@ export const TCGButton = extendVariants(Button, {
 	variants: {
 		// <- modify/add variants
 		color: {
-			primary_glow: 'bg-primary animate-pulse animate-infinite animate-duration-[5000ms] animate-ease-linear',
+			primary_glow:
+				'bg-primary animate-pulse font-bold animate-infinite animate-duration-[5000ms] animate-ease-linear hover:animate-none hover:bg-primary-600 hover:shadow-glow',
 		},
 		isDisabled: {
 			true: 'bg-[#eaeaea] text-[#000] opacity-50 cursor-not-allowed',

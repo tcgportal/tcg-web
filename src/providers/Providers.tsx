@@ -5,10 +5,10 @@ import QueryClientProvider from './QueryClientProvider';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-	let theme = 'light';
-	if (global?.window?.matchMedia && global.window?.matchMedia('(prefers-color-scheme: dark)').matches) {
-		theme = 'dark';
-	}
+	let theme = 'dark';
+	// if (global?.window?.matchMedia && global.window?.matchMedia('(prefers-color-scheme: dark)').matches) {
+	// 	theme = 'dark';
+	// }
 	return (
 		<NextUIProvider>
 			<NextThemesProvider attribute='class' defaultTheme={theme}>

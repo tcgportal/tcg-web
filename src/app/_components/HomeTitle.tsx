@@ -5,7 +5,7 @@ import { responsiveClassnames } from '@/utils/utils';
 import { Button } from '@nextui-org/react';
 import React from 'react';
 
-export const HomeTitle: React.FC<{}> = ({}) => {
+export const HomeTitle: React.FC<{ disableLoginButton: boolean }> = ({ disableLoginButton }) => {
 	return (
 		<section
 			className={responsiveClassnames(
@@ -30,10 +30,10 @@ export const HomeTitle: React.FC<{}> = ({}) => {
 						sm: ['sm:w-[200px]', 'sm:h-[200px]'],
 						default: ['w-[200px]', 'h-[200px]'],
 					},
-					'flex items-center justify-center w-full h-max',
+					'flex items-center justify-center w-full',
 				)}
 			>
-				<TCGSvg width='100%' height='auto' />
+				<TCGSvg width='100%' height='100%' />
 			</div>
 			<section className='flex flex-col justify-center items-center gap-4'>
 				<h1
@@ -96,9 +96,11 @@ export const HomeTitle: React.FC<{}> = ({}) => {
 					cartas de forma segura a tiendas de toda España
 				</p>
 				{/* TODO: Check if user is logged in, if not show the button */}
-				<TCGButton className='w-full' color={'primary_glow'} style={{ animationDuration: '3s' }}>
-					Registrate!
-				</TCGButton>
+				{!disableLoginButton ? (
+					<TCGButton className='w-full' color={'primary_glow'} style={{ animationDuration: '3s' }}>
+						Registrate!
+					</TCGButton>
+				) : undefined}
 			</section>
 		</section>
 	);

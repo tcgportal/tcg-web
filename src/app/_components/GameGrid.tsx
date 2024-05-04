@@ -40,7 +40,11 @@ export const GameGrid: React.FC<{}> = () => {
 				)}
 			>
 				{games.map((game, index) => {
-					return <GlowCard key={game.name} isLast={index === games.length - 1} />;
+					return (
+						<GlowCard className='p-8' key={game.name} link={game.name} isLast={index === games.length - 1}>
+							<img src={game.image} alt={game.name} className='w-full h-full object-contain' />
+						</GlowCard>
+					);
 				})}
 			</main>
 		</section>

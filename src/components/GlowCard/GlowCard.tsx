@@ -1,8 +1,9 @@
 import { classNames, responsiveClassnames } from '@/utils/utils';
 import React from 'react';
 import './glow-card.css';
+import Link from 'next/link';
 
-export const GlowCard: React.FC<{ isLast: boolean }> = ({ isLast }) => {
+export const GlowCardBase: React.FC<{ className?: string; children: React.ReactNode; isLast: boolean }> = ({ className, children, isLast }) => {
 	return (
 		<article
 			className={responsiveClassnames(
@@ -14,13 +15,32 @@ export const GlowCard: React.FC<{ isLast: boolean }> = ({ isLast }) => {
 					sm: ['sm:col-span-1'],
 					default: ['col-span-1'],
 				},
-				'glow-card__content flex w-full h-full justify-center items-center text-center relative',
+				'glow-card__content flex w-full h-full justify-center items-center text-center relative bg-default-50',
+				className,
 			)}
 		>
 			<div className={classNames('flex w-full h-full absolute glow-card__border')}></div>
-			<div>Content</div>
+			{children}
 		</article>
 	);
+};
+
+export const GlowCard: React.FC<{ className?: string; children: React.ReactNode; isLast: boolean; link?: string }> = ({
+	className,
+	children,
+	link,
+	isLast,
+}) => {
+	if (link) {
+		return (
+			<Link href={link}>
+				<GlowCardBase className={className} isLast={isLast}>
+					{children}
+				</GlowCardBase>
+			</Link>
+		);
+	}
+	return <GlowCardBase isLast={isLast}>{children}</GlowCardBase>;
 };
 
 export default GlowCard;
