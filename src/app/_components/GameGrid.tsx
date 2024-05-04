@@ -29,12 +29,12 @@ export const GameGrid: React.FC<{}> = () => {
 			<main
 				className={responsiveClassnames(
 					{
-						'2xl': ['2xl:grid-cols-2', '2xl:gap-8'],
-						xl: ['xl:grid-cols-2', 'xl:gap-8'],
-						lg: ['lg:grid-cols-2', 'lg:gap-8'],
-						md: ['md:grid-cols-2', 'md:gap-4'],
-						sm: ['sm:grid-cols-1', 'sm:gap-2'],
-						default: ['grid-cols-1', 'gap-2'],
+						'2xl': ['2xl:grid-cols-2', '2xl:grid-rows-3', '2xl:gap-8'],
+						xl: ['xl:grid-cols-2', 'xl:grid-rows-3', 'xl:gap-8'],
+						lg: ['lg:grid-cols-2', 'lg:grid-rows-3', 'lg:gap-6'],
+						md: ['md:grid-cols-2', 'md:grid-rows-3', 'md:gap-4'],
+						sm: ['sm:grid-cols-1', 'sm:grid-rows-5', 'sm:gap-2'],
+						default: ['grid-cols-1', 'sm:grid-rows-5', 'gap-2'],
 					},
 					'grid w-full h-full overflow-x-visible',
 				)}

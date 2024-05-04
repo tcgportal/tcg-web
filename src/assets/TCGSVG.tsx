@@ -5,7 +5,7 @@ export const TCGSvg: React.FC<{ width?: string; height?: string }> = (props) => 
 	const id = useId();
 	const gradientId = useId();
 	return (
-		<svg width={props.width || '1em'} height={props.height || '1em'} viewBox='0 0 612 666' fill='currentColor'>
+		<svg style={{ width: props.width, height: props.height }} viewBox='0 0 612 666' fill='currentColor'>
 			<defs>
 				<linearGradient id={gradientId} x1='0%' y1='0%' x2='0%' y2='100%'>
 					{/* <stop offset='0%' stopColor='hsl(var(--tcgportal-primary-500))' />

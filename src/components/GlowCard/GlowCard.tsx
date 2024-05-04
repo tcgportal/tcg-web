@@ -33,7 +33,17 @@ export const GlowCard: React.FC<{ className?: string; children: React.ReactNode;
 }) => {
 	if (link) {
 		return (
-			<Link href={link}>
+			<Link
+				href={link}
+				className={responsiveClassnames({
+					'2xl': [isLast ? '2xl:col-span-2' : '2xl:col-span-1'],
+					xl: [isLast ? 'xl:col-span-2' : 'xl:col-span-1'],
+					lg: [isLast ? 'lg:col-span-2' : 'lg:col-span-1'],
+					md: [isLast ? 'md:col-span-2' : 'md:col-span-1'],
+					sm: ['sm:col-span-1'],
+					default: ['col-span-1'],
+				})}
+			>
 				<GlowCardBase className={className} isLast={isLast}>
 					{children}
 				</GlowCardBase>

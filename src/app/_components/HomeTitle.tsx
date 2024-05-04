@@ -3,6 +3,7 @@ import { TCGButton } from '@/components/TCGComponents/TCGButton';
 import { APP_INFO } from '@/utils/constants';
 import { responsiveClassnames } from '@/utils/utils';
 import { Button } from '@nextui-org/react';
+import Link from 'next/link';
 import React from 'react';
 
 export const HomeTitle: React.FC<{ disableLoginButton: boolean }> = ({ disableLoginButton }) => {
@@ -101,6 +102,12 @@ export const HomeTitle: React.FC<{ disableLoginButton: boolean }> = ({ disableLo
 						Registrate!
 					</TCGButton>
 				) : undefined}
+				<p>
+					Si eres una tienda y quieres vender tus cartas,{' '}
+					<Link href='/shop-form' className='text-primary opacity-100 font-semibold hover:underline'>
+						rellena este formulario
+					</Link>
+				</p>
 			</section>
 		</section>
 	);

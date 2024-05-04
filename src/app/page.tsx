@@ -19,7 +19,7 @@ export default async function Home() {
 						sm: ['sm:grid-cols-1', 'sm:grid-rows-2', 'sm:gap-6', 'sm:p-4'],
 						default: ['grid-cols-1', 'grid-rows-2', 'gap-4', 'p-4'],
 					},
-					'grid w-full h-full items-center overflow-y-auto max-w-[2040px] mx-auto overflow-x-visible relative z-10',
+					'grid w-full h-full items-center overflow-y-auto overflow-x-visible relative z-10',
 				)}
 			>
 				<HomeTitle disableLoginButton={false} />

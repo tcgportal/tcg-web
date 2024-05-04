@@ -34,6 +34,11 @@ body {
 body {
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+
+	& > div {
+		max-width: 2040px;
+		margin: 0 auto;
+	}
 }
 
 body > div[data-overlay-container] {
