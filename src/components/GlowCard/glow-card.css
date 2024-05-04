@@ -50,7 +50,7 @@ article.glow-card__content {
 			border-bottom: solid 4px;
 			transform: scale3d(0, 1, 2);
 			border-image-slice: 1;
-			border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+			border-image-source: linear-gradient(to left, hsl(var(--tcgportal-primary-300)), hsl(var(--tcgportal-primary-600)));
 		}
 
 		&:after {
@@ -58,7 +58,7 @@ article.glow-card__content {
 			border-right: solid 4px;
 			transform: scale3d(1, 0, 2);
 			border-image-slice: 1;
-			border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+			border-image-source: linear-gradient(to left, hsl(var(--tcgportal-primary-300)), hsl(var(--tcgportal-primary-600)));
 		}
 
 		&:hover:before,

@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@nextui-org/react': ^2.3.6
+  '@nextui-org/theme': ^2.2.3
   '@tanstack/eslint-plugin-query': ^5.32.1
   '@tanstack/react-query': ^5.32.1
   '@types/node': 20.12.7
@@ -12,22 +13,27 @@ specifiers:
   framer-motion: ^11.1.7
   gsap: ^3.12.5
   next: 14.2.3
+  next-themes: ^0.3.0
   postcss: 8.4.38
   react: 18.3.1
   react-dom: 18.3.1
   tailwind-variants: ^0.2.1
   tailwindcss: 3.4.3
   typescript: 5.4.5
+  zustand: ^4.5.2
 
 dependencies:
   '@nextui-org/react': 2.3.6_ffjxcokxi4ccyfmfi46ym4wipy
+  '@nextui-org/theme': 2.2.3_tailwindcss@3.4.3
   '@tanstack/react-query': 5.32.1_react@18.3.1
   framer-motion: 11.1.7_nnrd3gsncyragczmpvfhocinkq
   gsap: 3.12.5
   next: 14.2.3_nnrd3gsncyragczmpvfhocinkq
+  next-themes: 0.3.0_nnrd3gsncyragczmpvfhocinkq
   react: 18.3.1
   react-dom: 18.3.1_react@18.3.1
   tailwind-variants: 0.2.1_tailwindcss@3.4.3
+  zustand: 4.5.2_omxgp22l5i4odgutx2pskcopxu
 
 devDependencies:
   '@tanstack/eslint-plugin-query': 5.32.1_te743w6atip6hhlha3uq43n2xe
@@ -4577,6 +4583,16 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /next-themes/0.3.0_nnrd3gsncyragczmpvfhocinkq:
+    resolution: {integrity: sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18
+      react-dom: ^16.8 || ^17 || ^18
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+    dev: false
+
   /next/14.2.3_nnrd3gsncyragczmpvfhocinkq:
     resolution: {integrity: sha512-dowFkFTR8v79NPJO4QsBUtxv0g9BrS/phluVpMAt2ku7H+cbcBJlopXjkWlwxrk/xGqMemr7JkGPGemPrLLX7A==}
     engines: {node: '>=18.17.0'}
@@ -5535,6 +5551,14 @@ packages:
       tslib: 2.6.2
     dev: false
 
+  /use-sync-external-store/1.2.0_react@18.3.1:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+    dev: false
+
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -5632,3 +5656,23 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand/4.5.2_omxgp22l5i4odgutx2pskcopxu:
+    resolution: {integrity: sha512-2cN1tPkDVkwCy5ickKrI7vijSjPksFRfqS6237NzT0vqSsztTNnQdHw9mmN7uBdk3gceVXU0a+21jFzFzAc9+g==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@types/react': '>=16.8'
+      immer: '>=9.0.6'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@types/react': 18.3.1
+      react: 18.3.1
+      use-sync-external-store: 1.2.0_react@18.3.1
+    dev: false

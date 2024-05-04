@@ -7,9 +7,11 @@ export const TCGSvg: React.FC<{ width?: string; height?: string }> = (props) => 
 	return (
 		<svg width={props.width || '1em'} height={props.height || '1em'} viewBox='0 0 612 666' fill='currentColor'>
 			<defs>
-				<linearGradient id={gradientId}>
-					<stop offset='0%' stopColor='#FF1CF7' />
-					<stop offset='100%' stopColor='#b249f8' />
+				<linearGradient id={gradientId} x1='0%' y1='0%' x2='0%' y2='100%'>
+					{/* <stop offset='0%' stopColor='hsl(var(--tcgportal-primary-500))' />
+					<stop offset='100%' stopColor='hsl(var(--tcgportal-primary-900))' /> */}
+					<stop offset='0%' stopColor='#FD376E' />
+					<stop offset='100%' stopColor='#B70000' />
 				</linearGradient>
 			</defs>
 			<path

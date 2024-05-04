@@ -1,4 +1,5 @@
 import TCGSvg from '@/assets/TCGSVG';
+import { TCGButton } from '@/components/TCGComponents/TCGButton';
 import { APP_INFO } from '@/utils/constants';
 import { responsiveClassnames } from '@/utils/utils';
 import { Button } from '@nextui-org/react';
@@ -38,7 +39,7 @@ export const HomeTitle: React.FC<{}> = ({}) => {
 				<h1
 					className='text-6xl font-bold tracking-tight inline-block'
 					style={{
-						background: '-webkit-linear-gradient(left, #ff7e5f, #feb47b)',
+						background: '-webkit-linear-gradient(left, #E9004C, #E9004C)',
 						WebkitBackgroundClip: 'text',
 						WebkitTextFillColor: 'transparent',
 					}}
@@ -74,7 +75,7 @@ export const HomeTitle: React.FC<{}> = ({}) => {
 					<span
 						className='font-bold'
 						style={{
-							background: '-webkit-linear-gradient(left, #ff7e5f, #feb47b)',
+							background: '-webkit-linear-gradient(left, #E9004C, #E9004C)',
 							WebkitBackgroundClip: 'text',
 							WebkitTextFillColor: 'transparent',
 						}}
@@ -85,7 +86,7 @@ export const HomeTitle: React.FC<{}> = ({}) => {
 					<span
 						className='font-bold'
 						style={{
-							background: '-webkit-linear-gradient(left, #ff7e5f, #feb47b)',
+							background: '-webkit-linear-gradient(left, #E9004C, #E9004C)',
 							WebkitBackgroundClip: 'text',
 							WebkitTextFillColor: 'transparent',
 						}}
@@ -94,9 +95,10 @@ export const HomeTitle: React.FC<{}> = ({}) => {
 					</span>{' '}
 					cartas de forma segura a tiendas de toda España
 				</p>
-				<Button className='w-full' variant='bordered'>
-					Register
-				</Button>
+				{/* TODO: Check if user is logged in, if not show the button */}
+				<TCGButton className='w-full' color={'primary_glow'} style={{ animationDuration: '3s' }}>
+					Registrate!
+				</TCGButton>
 			</section>
 		</section>
 	);
