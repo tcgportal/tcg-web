@@ -20,7 +20,6 @@ export default async function CardGameSearchPage({
             }}
         >
             <CardSearch dictionary={dictionary} />
-            <p>a</p>
         </div>
     );
 }
