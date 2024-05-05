@@ -27,28 +27,28 @@ export default function Layout({ params, children }: { params: { cardgame: strin
                     'flex w-full px-12 justify-between',
                 )}
             >
-                <Link href='/' className='flex h-full min-w-max w-auto items-center gap-4'>
-                    <TCGSvg height='100%' width='auto' />
-                    <h1
-                        className={responsiveClassnames(
-                            {
-                                '2xl': ['text-4xl'],
-                                xl: ['text-4xl'],
-                                lg: ['text-4xl'],
-                                md: ['text-4xl'],
-                                sm: ['text-3xl'],
-                                default: ['text-3xl'],
-                            },
-                            'font-bold min-w-max',
-                        )}
-                    >
-                        {APP_INFO.appName}
-                    </h1>
-                </Link>
-
-                <section className='flex'>
-                    <GameSelector />
+                <section className='flex h-full min-w-max w-auto items-center gap-4'>
+                    <Link href='/' className='flex h-full min-w-max w-auto items-center gap-4'>
+                        <TCGSvg height='100%' width='auto' />
+                        <h1
+                            className={responsiveClassnames(
+                                {
+                                    '2xl': ['text-4xl'],
+                                    xl: ['text-4xl'],
+                                    lg: ['text-4xl'],
+                                    md: ['text-4xl'],
+                                    sm: ['text-3xl'],
+                                    default: ['text-3xl'],
+                                },
+                                'font-bold min-w-max',
+                            )}
+                        >
+                            {APP_INFO.appName}
+                        </h1>
+                    </Link>
+                    <GameSelector currentGame={cardgame} />
                 </section>
+                <section>Botones login / register</section>
             </nav>
             <main className='flex w-full h-full'>{children}</main>
         </>

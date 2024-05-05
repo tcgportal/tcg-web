@@ -9,14 +9,16 @@ import magicIcon from '@/assets/images/game_magic.webp';
 import onePieceIcon from '@/assets/images/game_op.webp';
 import pokemonIcon from '@/assets/images/game_poke.webp';
 
+export type TGame = {
+    name: string;
+    displayName: string;
+    image: string;
+    icon: string;
+};
+
 export type TAPPInfo = {
     appName?: string;
-    games: Array<{
-        name: string;
-        displayName: string;
-        image: string;
-        icon?: string;
-    }>;
+    games: Array<TGame>;
 };
 
 export const APP_INFO: TAPPInfo = {
