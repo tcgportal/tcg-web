@@ -1,5 +1,6 @@
 import TCGSvg from '@/assets/TCGSVG';
 import GameSelector from '@/components/GameSelector/GameSelector';
+import AuthButtons from '@/components/LoginRegister/AuthButtons';
 import { APP_INFO } from '@/utils/constants';
 import { responsiveClassnames } from '@/utils/utils';
 import Link from 'next/link';
@@ -48,7 +49,9 @@ export default function Layout({ params, children }: { params: { cardgame: strin
                     </Link>
                     <GameSelector currentGame={cardgame} />
                 </section>
-                <section>Botones login / register</section>
+                <section>
+                    <AuthButtons />
+                </section>
             </nav>
             <main className='flex w-full h-full'>{children}</main>
         </>
