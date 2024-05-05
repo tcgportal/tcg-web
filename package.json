@@ -18,10 +18,14 @@
 		"next-themes": "^0.3.0",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
+		"sharp": "^0.33.3",
 		"tailwind-variants": "^0.2.1",
 		"zustand": "^4.5.2"
 	},
 	"devDependencies": {
+		"@iconify-json/iconamoon": "^1.1.4",
+		"@iconify-json/mdi": "^1.1.66",
+		"@iconify/tailwind": "^1.0.1",
 		"@tanstack/eslint-plugin-query": "^5.32.1",
 		"@types/node": "20.12.7",
 		"@types/react": "18.3.1",
